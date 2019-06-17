@@ -1,33 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #333;
+  --secondary-color: #eee;
+  --font-color: #333;
+  --bg-color: #fff;
+  --heading-color: #000;
+}
+
+[data-mode="dark"] {
+    --primary-color: #eee;
+    --secondary-color: #333;
+    --font-color: #eee;
+    --bg-color: #333;
+    --heading-color: #61dafb;
+}
+
+body {
+  font-family: 'Neucha', cursive;
+  font-size: 18px;
+}
+
 .App {
-  text-align: center;
+  padding: 45px 30px;
+  background: var(--secondary-color);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.switch {
+  position: relative;
+  height: 30px;
+  width: 60px;
+  cursor: pointer;
+  background: var(--primary-color);
+  border-radius: 40px;
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.switch:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+  background: var(--secondary-color);
+  border-radius: 40px;
+  transition: 0.5s all;
 }
 
-.App-link {
-  color: #61dafb;
+.switch.dark:after {
+  left: calc(100% - 30px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App h3 {
+  font-size: 36px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+.App p {
+  font-size: 26px;
+  color: var(--font-color);
+}
+
+.App img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 25px;
+  background: var(--primary-color);
 }
